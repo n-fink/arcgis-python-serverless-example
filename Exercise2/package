@@ -1,0 +1,14 @@
+#!/bin/bash
+sudo yum install python37
+python3 -m venv arcgis-lambda
+source ./arcgis-lambda/bin/activate
+pip install requests --no-cache-dir
+pip install requests-toolbelt --no-cache-dir
+pip install requests_ntlm --no-cache-dir
+pip install ujson --no-cache-dir
+pip install pandas --no-cache-dir
+pip install numpy --no-cache-dir
+pip install arcgis --no-deps
+deactivate
+cd arcgis-lambda/lib/python3.7/site-packages
+zip -r ../../../../arcgisLambda.zip .
